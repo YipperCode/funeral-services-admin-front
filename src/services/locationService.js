@@ -1,6 +1,10 @@
 export const getLocationByIP = async () => {
     try {
-      const response = await fetch("http://www.geoplugin.net/json.gp");
+      const response = await fetch("http://www.geoplugin.net/json.gp", {
+        headers: {
+          "Origin": "https://funeral-services-admin-front.onrender.com/"
+        }
+      });
       const data = await response.json();
       return {
         city: data.geoplugin_city,
